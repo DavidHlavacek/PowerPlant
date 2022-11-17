@@ -8,7 +8,7 @@ public abstract class Core {
     }
 
     public void decreasePercentage(double decreasePercentageBy) {
-        this.remainingPercentage -= remainingPercentage;
+        this.remainingPercentage -= (remainingPercentage > 100) ? 100 : remainingPercentage;
     }
 
     public abstract SplitResult split(double tempInKelvin, double timeInSeconds);
