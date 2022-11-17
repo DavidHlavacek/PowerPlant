@@ -12,13 +12,16 @@ public class PowerPlant {
     }
 
     public double Run(double temp, int time) {
+        double totalKwh = 0;
         Iterator<Core> cores = reactor.getCores();
         while(cores.hasNext()) {
             SplitResult result = cores.next().split(temp, time);
-            generator.generateEnergy(result.getSteam());
+            totalKwh += generator.generateEnergy(result.getSteam());
             coolingSystem.abductResidualHeat(result.getResidualHeat());
         }
 
-        return generator.getTotalYieldInKwh();
+        return totalKwh;
+        //Not this as this is the result for all the runs
+        //return generator.getTotalYieldInKwh();
     }
 }

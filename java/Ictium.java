@@ -4,6 +4,7 @@ public class Ictium extends Core{
         double decreasePercentageBy;
         double steam;
         double residualHeat;
+        //As the core can get empty before time runs out;
         double timeInSecondsBeforeEmpty;
 
         if(!(tempInKelvin < 334)) {

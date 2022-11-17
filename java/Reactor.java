@@ -12,6 +12,7 @@ public class Reactor {
         this.cores.add(core);
     }
 
+    //passing it an iterator for better encapsulation
     public Iterator<Core> getCores() {
         Iterator<Core> it = cores.iterator();
         return it;
